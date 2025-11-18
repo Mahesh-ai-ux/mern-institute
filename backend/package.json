@@ -2,10 +2,7 @@
   "name": "institute-backend",
   "version": "1.0.0",
   "main": "src/index.js",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
-  },
+  "scripts": { "start": "node src/index.js" },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
