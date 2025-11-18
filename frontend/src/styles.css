@@ -1,0 +1,5 @@
+body{ font-family: Arial, sans-serif; padding: 20px }
+nav{ margin-bottom: 12px }
+.card{ max-width: 400px; padding: 12px; border: 1px solid #ddd }
+input{ display:block; margin-bottom:8px; padding:6px; width:100% }
+button{ padding:8px 12px }
