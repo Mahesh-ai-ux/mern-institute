@@ -1,15 +1,7 @@
-const mongoose = require('mongoose');
 
-const leadSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  phone: { type: String },
-  email: { type: String },
-  course: { type: String },
-  source: { type: String },
-  status: { type: String, enum: ['new','contacted','demo','enrolled','lost'], default: 'new' },
-  assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  notes: { type: String },
-  createdAt: { type: Date, default: Date.now }
-});
-
-module.exports = mongoose.model('Lead', leadSchema);
+const m=require("mongoose");
+module.exports=m.model("Lead", new m.Schema({
+  name:String,
+  status:{type:String,default:"new"},
+  assignedTo:{type:m.Schema.Types.ObjectId,ref:"User"}
+},{timestamps:true}));

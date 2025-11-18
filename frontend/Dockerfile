@@ -1,16 +1,12 @@
-FROM node:18
 
+FROM node:18 AS builder
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm install
-
 COPY . .
-
 RUN npm run build
 
-# Serve build using a lightweight web server
-RUN npm install -g serve
-
-EXPOSE 3000
-CMD ["serve", "-s", "dist", "-l", "3000"]
+FROM nginx:stable-alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx","-g","daemon off;"]
